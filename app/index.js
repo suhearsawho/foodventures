@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Header from './components/Header';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
+import Header from './components/Header';
+import ProductEntry from './components/ProductEntry';
 import './index.css'
 
 const useStyles = makeStyles(theme => ({
@@ -23,8 +24,8 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       light: '#b5ffff',
-      main: '#81d3f9',
-      dark: '#4ba2c6',
+      dark: '#81d3f9',
+      main: '#4ba2c6',
       contrastText: '#fff',
     },
     secondary: {
@@ -39,7 +40,7 @@ const theme = createMuiTheme({
     fontSize: 14,
     fontWeightLight: 300, // Work Sans
     fontWeightRegular: 400, // Work Sans
-    fontWeightMedium: 700, // Roboto Condensed
+    fontWeightMedium: 540, // Roboto Condensed
     fontFamilySecondary: "'Roboto Condensed', sans-serif",
   },
 });
@@ -51,6 +52,7 @@ class App extends Component {
         <ThemeProvider theme={ theme }>
           <CssBaseline />
           <Header />
+          <ProductEntry />
         </ThemeProvider>
       </React.Fragment>
     );

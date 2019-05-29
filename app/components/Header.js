@@ -13,13 +13,19 @@ const styles = theme => ({
   toolbar: {
     justifyContent: 'space-between',
   },
-  title: {
-    marginLeft: theme.spacing(4)
+  placeholder: {
+    height: 56,
+    [theme.breakpoints.up('sm')]: {
+      height: 64,
+    }
   },
   right: {
     flex: 1,
     display: 'flex',
     justifyContent: 'flex-end',
+  },
+  title: {
+    paddingLeft: '0.5rem'
   }
 });
 
@@ -27,19 +33,22 @@ function Header (props) {
   const { classes } = props;
 
   return (
-    <AppBar position="fixed">
-      <Toolbar className={classes.toolbar}>
-        <FlightTakeoff />        
-        <Typography variant="h6" color="inherit" className="title" noWrap>
-          Foodventures
-        </Typography>
-        <div className={classes.right}>
-          <Button href="#">
-            Sign Up
-          </Button>
-        </div>
-      </Toolbar>
-    </AppBar>
+    <div>
+      <AppBar position="fixed">
+        <Toolbar className={classes.toolbar}>
+          <FlightTakeoff />
+          <Typography variant="h6" color="inherit" className={classes.title} noWrap>
+            foodventures
+          </Typography>
+          <div className={classes.right}>
+            <Button href="#">
+              Sign Up
+            </Button>
+          </div>
+        </Toolbar>
+      </AppBar>
+      <div className={classes.placeholder} />
+    </div>
   )
 }
 
