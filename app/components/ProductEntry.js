@@ -75,23 +75,34 @@ class ProductEntry extends Component {
     super(props);
 	}
 
+  handleSubmit(event) {
+    console.log('hi');
+  }
   render() {
-		const { classes } = this.props;
+    const { classes } = this.props;
+    console.log(IconButton)
     return (
       <section className={classes.root}>
         <Paper className={classes.paperRoot}>
           <InputBase
             className={classes.input}
             placeholder="Food (Name or Image)"
+            required={ true }
             inputProps={{ 'aria-label': 'Food (Name or Image)' }}
           />
           <Divider className={classes.divider} />
           <InputBase
             className={classes.input}
             placeholder="Location"
+            required={ true }
             inputProps={{ 'aria-label': 'Location' }}
           />
-          <IconButton color="primary" className={classes.iconButton} aria-label="Search">
+          <IconButton 
+            color="primary" 
+            className={classes.iconButton} 
+            aria-label="Search"
+            onClick = {this.handleSubmit}
+          >
             <SearchIcon />
           </IconButton>
         </Paper>
